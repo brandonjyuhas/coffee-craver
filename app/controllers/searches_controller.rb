@@ -14,6 +14,10 @@ class SearchesController < ApplicationController
 
   def create
     @search = Search.new(search_params)
+
+    if @search.save
+      render json: @search
+    end
   end
 
   private

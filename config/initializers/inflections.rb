@@ -14,3 +14,9 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+# Add pluralization of cafe as cafes instead of caves
+
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.irregular 'cafe', 'cafes'
+end
