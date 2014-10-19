@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div id="coffee-header"><div class="logo"><img src="http://i.imgur.com/SePCCpY.png?1"/><p>Find Your Java Fix!</p></div><div class="background"></div>
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+
+
+    <script type="text/x-handlebars-template" id="cafe-template">
+      <div class="two columns cafe" style="background-image:'{{image_url}}'">
+        <h3>"{{name}}"</h3>
+        <p>"{{address}}"</p>
+      </div>
+
+    </script>
+
+  </body>
+</html>

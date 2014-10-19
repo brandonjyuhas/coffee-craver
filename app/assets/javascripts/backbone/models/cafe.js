@@ -1,0 +1,1 @@
+console.log('cafe view connected');
