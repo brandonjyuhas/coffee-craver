@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+#coffee-header {
+	position: absolute;
+	top: 0;
+	height: 15%;
+	width: 100%;
+	border-bottom: solid saddlebrown 5px;
+}
+
+.logo{
+	/*position: absolute;*/
+	float: left;
+	height: 100%;
+	width: 20%;
+	display: inline-block;
+}
+
+.logo img {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+
+.logo p{
+	margin-left: 5px;
+	display: inline-block;
+	height: 100%;
+	font-size: 1.2em;
+}
+
+#coffee-header .background {
+	float: right;
+	height: 100%;
+	width: 80%;
+	display: inline-block;
+	background-image: url('http://i.imgur.com/MLDtkWZ.jpg');
+	background-size: cover;
+}

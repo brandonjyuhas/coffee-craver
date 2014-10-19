@@ -1,0 +1,11 @@
+<h1> Welcome! </h2>
+<%= form_for :search, url: '/searches' do |f| %>
+
+	<%= f.text_field :address, :placeholder => "Enter your address. . ." %>
+
+	<%= f.submit %>
+<% end %>
+
+<div class="row">
+	<div class="show-results"></div>
+</div>
