@@ -21,3 +21,4 @@ Router = Backbone.Router.extend({
 		cafeCollectionView = new CollectionView({collection: cafes});
 	}
 });
+
