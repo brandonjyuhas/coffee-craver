@@ -2,7 +2,7 @@ console.log('router.js connected');
 
 Router = Backbone.Router.extend({
 	routes: {
-		'search/cafe' : 'listCafes'
+		'cafe' : 'listCafes'
 	},
 
 	clearCafe: function(){
