@@ -18,27 +18,16 @@ FormView = Backbone.View.extend({
 	},
 
 	newSearch: function(){
+		var target = "";
+		console.log(target);
 		var target = this.collection;
-		var url = $.url();
-		var url_id = url.fsegment(2);
-		if(url_id){
-			this.collection.create({address: this.$("[name='address']").val()}, {success: function(){
-				$('input').val('');
-				var id = target["models"][0]["id"];
-				router.navigate('/searches/' + (parseInt(id) + 1) + '/cafes');
-				router.listCafes();
-			},
-		});
-		}
-		else{
 			this.collection.create({address: this.$("[name='address']").val()}, {success: function(){
 					$('input').val('');
-					var id = target["models"][0]["id"];
-					router.navigate('/searches/' + id + '/cafes');
+					id = target["models"][(target["models"].length -1)]["attributes"]["id"];
+					router.navigate('/searches/' + parseInt(id) + '/cafes');
 					router.listCafes();
-				},
-			});
-		}
+				}
+		});
 	},
 
   // Determine if user pressed enter key, and then fire off newSearch
