@@ -94,3 +94,14 @@ header .background {
 	background-image: url('http://i.imgur.com/MLDtkWZ.jpg');
 	background-size: cover;
 }
+
+@media (max-width: 1200px) {
+	.logo {
+		display: none;
+	}
+
+	header .background {
+		width: 100%;
+	}
+
+}
