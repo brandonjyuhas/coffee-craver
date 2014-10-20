@@ -1,8 +1,17 @@
-console.log('router.js connected');
-
 Router = Backbone.Router.extend({
 	routes: {
-		'cafe' : 'listCafes'
+		'': 'index',
+		'searches/:id/cafes': 'listCafes'
+	},
+
+	initialize: function() {
+		searchCollection = new SearchCollection();
+
+		searchFormView = new FormView({collection: searchCollection});
+	},
+
+	index: function() {
+		$('#search-form').show();
 	},
 
 	clearCafe: function(){
@@ -11,14 +20,18 @@ Router = Backbone.Router.extend({
 	},
 
 	listCafes: function(){
-		console.log('listCafes firing');
 		this.clearCafe();
 
 		cafes = new CafeCollection();
-		cafes.fetch({reset: true});
-		console.log(cafes);
-
-		cafeCollectionView = new CollectionView({collection: cafes});
+		// Get URL to get search_id using purl
+		var url = $.url();
+		var id = url.fsegment(2);
+		cafes.fetch({reset: true,
+			success: function(){
+				search_cafes = cafes.byID(parseInt(id));
+				cafeCollectionView = new CollectionView({collection: search_cafes});
+			}
+		});
 	}
 });
 
