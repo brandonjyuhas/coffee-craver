@@ -19,12 +19,10 @@ FormView = Backbone.View.extend({
 
 	newSearch: function(){
 		var target = "";
-		console.log(target);
 		var target = this.collection;
 			this.collection.create({address: this.$("[name='address']").val()}, {success: function(){
 					$('input').val('');
 					id = target["models"][(target["models"].length -1)]["attributes"]["id"];
-					console.log(id);
 					router.navigate('/searches/' + parseInt(id) + '/cafes');
 					router.listCafes();
 				}
