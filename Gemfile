@@ -17,6 +17,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use HHTParty for API requests
 gem 'httparty'
 
+# Use 12factor for pushing to heroku
+gem 'rails_12factor', group: :production
+
 # Use foundation for layout
 gem 'foundation-rails'
 
