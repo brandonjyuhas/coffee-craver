@@ -8,8 +8,13 @@ The fully functional app is located here: http://coffee-craver.herokuapp.com/
 
 To-do list:
 	- Allow viewing of previous searches
+
 	- Find more stock pictures to handle google returns without photos
+
 	- Make header more responsive
+
 	- Have the website collect longitude and latitude from the users IP address with an optional search form
+
 	- Pretty it up!
+
 	- Add flash messages to handle google places api "NO RESULT" returns
