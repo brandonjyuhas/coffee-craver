@@ -42,7 +42,7 @@ class Search < ActiveRecord::Base
     puts "\n\n\n\n Find Cafe fired"
     raw_data = HTTParty.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{lat},#{lng}&keyword=coffee&types=cafe&rankby=distance&key=#{Rails.application.secrets.google_api_key}
 ")
-
+    puts raw_data
     if raw_data["results"].length > 10
       raw_data["results"][0..9].each do |i|
         create_cafe(i)
