@@ -20,6 +20,12 @@
 //= require backbone_datalink
 //= require backbone/ww_exercise
 //= require handlebars
+//= require purl
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function(){
+  router = new Router();
+  Backbone.history.start();
+});

@@ -1,5 +1,3 @@
-console.log("cafe view connected");
-
 // Create Global Cafe View
 CafeView = Backbone.View.extend({
 	className: 'cafe',

@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141018233551) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cafes", force: true do |t|
     t.integer  "search_id"
     t.string   "name"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141018233551) do
     t.datetime "updated_at"
   end
 
-  add_index "cafes", ["search_id"], name: "index_cafes_on_search_id"
+  add_index "cafes", ["search_id"], name: "index_cafes_on_search_id", using: :btree
 
   create_table "searches", force: true do |t|
     t.string   "address"

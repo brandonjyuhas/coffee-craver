@@ -1,7 +1,7 @@
 class CafesController < ApplicationController
 
   def index
-    @cafes = Cafe.where(search_id: params[:id])
+    @cafes = Cafe.all
     render json: @cafes
   end
 

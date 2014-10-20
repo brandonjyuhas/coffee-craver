@@ -5,7 +5,9 @@ class SearchesController < ApplicationController
   end
 
   def show
-    @search = Search.find(:id)
+    @search = Search.find(params[:id])
+    @cafes = Cafe.where(search_id: params[:id])
+    render json: @search
   end
 
   def new

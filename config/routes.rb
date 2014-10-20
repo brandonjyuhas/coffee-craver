@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'searches#new'
-  resources :searches, only: [:index, :new, :create] do
-    resources :cafes, only: [:index, :new, :create]
-  end
+  root 'welcome#index'
+  resources :searches, only: [:index, :show, :new, :create]
+  resources :cafes, only: [:index, :new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
