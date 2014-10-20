@@ -23,7 +23,6 @@ class Search < ActiveRecord::Base
 
   def find_lng_lat
 
-    puts "\n\n\n\n Find lng lat fired"
 
     # Create variable to handle spaces
     address_search = ("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.address}&key=#{Rails.application.secrets.google_api_key}").gsub!(/\s/,'+')
@@ -39,10 +38,8 @@ class Search < ActiveRecord::Base
   end
 
   def find_cafes(lng,lat)
-    puts "\n\n\n\n Find Cafe fired"
     raw_data = HTTParty.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{lat},#{lng}&keyword=coffee&types=cafe&rankby=distance&key=#{Rails.application.secrets.google_api_key}
 ")
-    puts raw_data
     if raw_data["results"].length > 10
       raw_data["results"][0..9].each do |i|
         create_cafe(i)
@@ -52,7 +49,6 @@ class Search < ActiveRecord::Base
   end
 
   def create_cafe(result)
-    puts "\n\n create cafe fired"
     if result["photos"] == nil
       @image_url = @@cafe_pics_array.sample
     else
