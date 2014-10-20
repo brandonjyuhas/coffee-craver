@@ -16,7 +16,6 @@ class SearchesController < ApplicationController
 
   def create
     @search = Search.new(search_params)
-    puts "\n\n\n\n TEST"
 
     if @search.save
       render json: @search
